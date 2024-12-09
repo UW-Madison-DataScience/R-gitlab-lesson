@@ -66,9 +66,9 @@ contact: 'team@carpentries.org' # FIXME
 
 # Order of episodes in your lesson
 episodes: 
-- intro.md
-- git.md
-- gitlab.md
+- intro.Rmd
+- git.Rmd
+- gitlab.Rmd
 
 # Information for Learners
 learners: 
