@@ -6,14 +6,16 @@ exercises: 2
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- How do you write a lesson using R Markdown and `{sandpaper}`?
+- What is Version Control?
+- What is the difference between Git, GitHub, and GitLab?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Explain how to use markdown with the new lesson template
-- Demonstrate how to include pieces of code, figures, and nested challenge blocks
+- Understand how to set up a collaborative workflow in RStudio using version control with GitLab.
+- Explain the concept and importance of version control.
+- Discuss the advantages of using Git and why GitLab was chosen over other platforms like GitHub.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
