@@ -1,45 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://carpentries.github.io/workbench-template-rmd/404.html</loc>
+    <loc>https://UW-Madison-DataScience.github.io/R-gitlab-lesson/404.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-rmd/CODE_OF_CONDUCT.html</loc>
+    <loc>https://UW-Madison-DataScience.github.io/R-gitlab-lesson/CODE_OF_CONDUCT.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-rmd/LICENSE.html</loc>
+    <loc>https://UW-Madison-DataScience.github.io/R-gitlab-lesson/LICENSE.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-rmd/index.html</loc>
+    <loc>https://UW-Madison-DataScience.github.io/R-gitlab-lesson/aio.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-rmd/instructor/404.html</loc>
+    <loc>https://UW-Madison-DataScience.github.io/R-gitlab-lesson/images.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-rmd/instructor/CODE_OF_CONDUCT.html</loc>
+    <loc>https://UW-Madison-DataScience.github.io/R-gitlab-lesson/index.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-rmd/instructor/LICENSE.html</loc>
+    <loc>https://UW-Madison-DataScience.github.io/R-gitlab-lesson/instructor/404.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-rmd/instructor/index.html</loc>
+    <loc>https://UW-Madison-DataScience.github.io/R-gitlab-lesson/instructor/CODE_OF_CONDUCT.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-rmd/instructor/introduction.html</loc>
+    <loc>https://UW-Madison-DataScience.github.io/R-gitlab-lesson/instructor/LICENSE.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-rmd/instructor/profiles.html</loc>
+    <loc>https://UW-Madison-DataScience.github.io/R-gitlab-lesson/instructor/aio.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-rmd/instructor/reference.html</loc>
+    <loc>https://UW-Madison-DataScience.github.io/R-gitlab-lesson/instructor/images.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-rmd/introduction.html</loc>
+    <loc>https://UW-Madison-DataScience.github.io/R-gitlab-lesson/instructor/index.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-rmd/profiles.html</loc>
+    <loc>https://UW-Madison-DataScience.github.io/R-gitlab-lesson/instructor/instructor-notes.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-rmd/reference.html</loc>
+    <loc>https://UW-Madison-DataScience.github.io/R-gitlab-lesson/instructor/introduction.html</loc>
+  </url>
+  <url>
+    <loc>https://UW-Madison-DataScience.github.io/R-gitlab-lesson/instructor/key-points.html</loc>
+  </url>
+  <url>
+    <loc>https://UW-Madison-DataScience.github.io/R-gitlab-lesson/instructor/profiles.html</loc>
+  </url>
+  <url>
+    <loc>https://UW-Madison-DataScience.github.io/R-gitlab-lesson/instructor/reference.html</loc>
+  </url>
+  <url>
+    <loc>https://UW-Madison-DataScience.github.io/R-gitlab-lesson/instructor-notes.html</loc>
+  </url>
+  <url>
+    <loc>https://UW-Madison-DataScience.github.io/R-gitlab-lesson/introduction.html</loc>
+  </url>
+  <url>
+    <loc>https://UW-Madison-DataScience.github.io/R-gitlab-lesson/key-points.html</loc>
+  </url>
+  <url>
+    <loc>https://UW-Madison-DataScience.github.io/R-gitlab-lesson/profiles.html</loc>
+  </url>
+  <url>
+    <loc>https://UW-Madison-DataScience.github.io/R-gitlab-lesson/reference.html</loc>
   </url>
 </urlset>
