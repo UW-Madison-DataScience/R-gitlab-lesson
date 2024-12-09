@@ -90,6 +90,8 @@ Or you can use standard markdown for static figures with the following syntax:
 `![optional caption that appears below the figure](figure url){alt='alt text for
 accessibility purposes'}`
 
+![description of image](images/mycoolimage.png){alt='description of my figure so it is undestanable without seeing it'}
+
 ![You belong in The Carpentries!](https://raw.githubusercontent.com/carpentries/logo/master/Badge_Carpentries.svg){alt='Blue Carpentries hex person logo with no text.'}
 
 ::::::::::::::::::::::::::::::::::::: callout
