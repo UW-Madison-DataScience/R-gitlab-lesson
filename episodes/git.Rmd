@@ -6,120 +6,112 @@ exercises: 2
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- How do you write a lesson using R Markdown and `{sandpaper}`?
+- How do I setup a repository in GitLab?
+- How do I use git to record the history of my code in Rstudio?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Explain how to use markdown with the new lesson template
-- Demonstrate how to include pieces of code, figures, and nested challenge blocks
+- Identify the location and functionality of Git integration within RStudio
+- Create a repository in GitLab for version control
+- Clone a GitLab repository as a project in RStudio
+- Make changes to the project, add, and commit them using Git
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Introduction
 
-This is a lesson created via The Carpentries Workbench. It is written in
-[Pandoc-flavored Markdown](https://pandoc.org/MANUAL.txt) for static files and
-[R Markdown][r-markdown] for dynamic files that can render code into output. 
-Please refer to the [Introduction to The Carpentries 
-Workbench](https://carpentries.github.io/sandpaper-docs/) for full documentation.
+This lesson will pick up using the ratdat / portal dataset we used in the previous sessions.
 
-What you need to know is that there are three sections required for a valid
-Carpentries lesson template:
+To get started we need to setup the project we are going to be working with (both in R/RStudio and in GitLab).
+You can setup the project first in either place but for this example we will start by creating the repository in GitLab.
 
- 1. `questions` are displayed at the beginning of the episode to prime the
-    learner for the content.
- 2. `objectives` are the learning objectives for an episode displayed with
-    the questions.
- 3. `keypoints` are displayed at the end of the episode to reinforce the
-    objectives.
+First you need to navigate to the [UW-Madison GitLab instance][uw-gitlab] and login with your netid.
 
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
+Next we will create a new project, you can do so by clicking the "+" button then "new project/repository" icon in the upper-left hand of the screen OR you can click the blue "New Project" button on the right hand side of the screen.
 
-Inline instructor notes can help inform instructors of timing challenges
-associated with the lessons. They appear in the "Instructor View"
+<!--- screenshot needed: gitlab interface highlighting the + button and new project/repo and new project button -->
 
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+On the "Create new project" page, choose "Create a blank project".
 
-::::::::::::::::::::::::::::::::::::: challenge 
+<!--- screenshot needed: Create new project page -->
 
-## Challenge 1: Can you do it?
+We will call our project, `ratdat_lib_wksp`.
+Note, if you belong to any organizations (like from your dept or lab), you may need to change the project URL to your user instead of the organization.
+It will automatically assign the "Project slug" (aka the end of the url for that project) to be the same as the project name.
+If you use spaces in your project name, it will replace them with `-` in your project slug.
+You also need to choose the visiability level.  You can decide what level of visibility you would like your project to have.
+I'll make mine public so I can share it with you direclty if you are interested.
+You can also decide if you would like it to create a README for your project.  Best practice is to have a README for any project so we will keep it checked.
+We will skip the option for security testing but this could be an option you want to enable for your code projects.
+Then click the "Create project button".
 
-What is the output of this command?
+<!--- screenshots needed: the create new project page with the options given in the paragraph above highlighted-->
 
-```r
-paste("This", "new", "lesson", "looks", "good")
-```
+Now that we have created the project we can see the repository.  It created a nice README start, that is show at the bottom.
 
-:::::::::::::::::::::::: solution 
+<!--- screenshot needed: view of the project repo after creation -->
 
-## Output
- 
-```output
-[1] "This new lesson looks good"
-```
+::::::::: instructor 
 
-:::::::::::::::::::::::::::::::::
+You may want to give a short orentation to the different parts of the GitLab project webpage that seem relevant here:
+For example:
+- the file list
+- issues/merge requests on the left pane
+- project info on the right side (license, changelog etc)
 
+::::::::::::::::::::
 
-## Challenge 2: how do you nest solutions within challenge blocks?
+Next we will `clone` (copy) this project to our computer and make it a project in RStudio.
 
-:::::::::::::::::::::::: solution 
+First in GitLab we need to click the blue "Code" button on the upper right of our GitLab project.
+Then click the copy button to the right of the "Clone with HTTPS" option.
 
-You can add a line with at least three colons and a `solution` tag.
+<!--- screenshot needed: the code menu and the copy button from the clone with HTTPS option highlighted"
 
-:::::::::::::::::::::::::::::::::
-::::::::::::::::::::::::::::::::::::::::::::::::
+Then switch over to your RStudio window and click the new project button (Or click File > New Project).
 
-## Figures
+<!--- screenshot needed: highligting the new project button -->
 
-You can also include figures generated from R Markdown:
+In the new project wizard, click the "Version Control" option.
+On the next page, click the "Git" option.
+Paste the HTTPS address you copied in the "Repository URL" option.
+It will autofill in the "Project directory name" box with the slug from the URL when you click away from that box, but you can change it if you ever need to.
+You may want to change where the project is created in your file system, by default it will likely save it in your home folder/`~`.
+We will change ours to Desktop so we can find it more easily by clicking the "Browse" button, and then choseing our `Desktop` folder and clicking "Open".
+We can then click the "Create project" button.
 
-```{r pyramid, fig.alt = "pie chart illusion of a pyramid", fig.cap = "Sun arise each and every morning"}
-pie(
-  c(Sky = 78, "Sunny side of pyramid" = 17, "Shady side of pyramid" = 5), 
-  init.angle = 315, 
-  col = c("deepskyblue", "yellow", "yellow3"), 
-  border = FALSE
-)
-```
+<!--- screenshots needed of all the project wizard pages with the inputs described above -->
 
-Or you can use standard markdown for static figures with the following syntax:
+Since we've never authenticated with gitlab before it will ask us for our username.
+We need to go back to GitLab and check our username and setup a personal access token (PAT).
 
-`![optional caption that appears below the figure](figure url){alt='alt text for
-accessibility purposes'}`
+In GitLab you can check your username by clicking on your profile icon in the upper left panel. It will say `@FIRSTNAME.LASTNAME` or something to that effect.  That is your username.
+To setup the PAT, click the "Settings" option on the left hand side (bottom of the left pane), then choose "Access Tokens".
 
-![You belong in The Carpentries!](https://raw.githubusercontent.com/carpentries/logo/master/Badge_Carpentries.svg){alt='Blue Carpentries hex person logo with no text.'}
+On the "Project access tokens" page, click the "Add new token" button. Give the token a name specfific to the computer you are working from.
+By default, it will expire in a month.  We will leave that setting for now and if you use GitLab after a month, you should go back and give it further permissions or create a new token.
+Then click "Create Project Token".
 
-::::::::::::::::::::::::::::::::::::: callout
+It will then Show the project token in a green box on the screen but we won't be able to access it again so we need to copy it now (we can always setup others if needed later).
+Click the copy button to copy the token. 
 
-Callout sections can highlight information.
-
-They are sometimes used to emphasise particularly important points
-but are also used in some lessons to present "asides": 
-content that is not central to the narrative of the lesson,
-e.g. by providing the answer to a commonly-asked question.
-
-::::::::::::::::::::::::::::::::::::::::::::::::
+Now that we have copied the token, we need to put it into RStudio.
+Back in RStudio, you need to enter the username you found in GitLab, then press "OK".
+Then it will ask for your "Password", paste your token into the box and press "OK".
 
 
-## Math
 
-One of our episodes contains $\LaTeX$ equations when describing how to create
-dynamic reports with {knitr}, so we now use mathjax to describe this:
 
-`$\alpha = \dfrac{1}{(1 - \beta)^2}$` becomes: $\alpha = \dfrac{1}{(1 - \beta)^2}$
+<!---
+Outline:
+- setup gitlab repo
+- clone repo into rstudio project
+- setup ssh key
+- add code from previous session to script
+- make changes to code from previous session
+- push changes back to gitLab
 
-Cool, right?
 
-::::::::::::::::::::::::::::::::::::: keypoints 
-
-- Use `.md` files for episodes when you want static content
-- Use `.Rmd` files for episodes when you need to generate output
-- Run `sandpaper::check_lesson()` to identify any issues with your lesson
-- Run `sandpaper::build_lesson()` to preview your lesson locally
-
-::::::::::::::::::::::::::::::::::::::::::::::::
-
-[r-markdown]: https://rmarkdown.rstudio.com/
+-->
