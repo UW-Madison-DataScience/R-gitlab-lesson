@@ -92,7 +92,8 @@ To setup the PAT, click the "Settings" option on the left hand side (bottom of t
 
 On the "Project access tokens" page, click the "Add new token" button. Give the token a name specfific to the computer you are working from.
 By default, it will expire in a month.  We will leave that setting for now and if you use GitLab after a month, you should go back and give it further permissions or create a new token.
-Then click "Create Project Token".
+Select "Owner" as the role.
+Then click "Create project access token".
 
 It will then Show the project token in a green box on the screen but we won't be able to access it again so we need to copy it now (we can always setup others if needed later).
 Click the copy button to copy the token. 
