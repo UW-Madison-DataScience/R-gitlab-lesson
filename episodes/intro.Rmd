@@ -1,5 +1,5 @@
 ---
-title: "Version Control and GitLab"
+title: "Introduction to Version Control and GitLab"
 teaching: 10
 exercises: 2
 based on: Software Carpentry Git-Novice Lesson
@@ -14,74 +14,33 @@ based on: Software Carpentry Git-Novice Lesson
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Understand the benefits of an automated version control system.
-- Understand the basics of how automated version control systems work.
-- Discuss the advantages of using Git and why GitLab was chosen over other platforms like GitHub.
+- Understand the utility and benefits of automated version control systems.
+- Differentiate between Git, GitHub, and GitLab.
+- Explain why GitLab was chosen over other platforms like GitHub.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-We'll start by exploring how version control can be used
-to keep track of what one person did and when.
-Even if you aren't collaborating with other people,
+We'll start by exploring how version control can be used to keep track of what one person did and when. Even if you aren't collaborating with other people,
 automated version control is much better than this situation:
 
 !["notFinal.doc" by Jorge Cham, <https://www.phdcomics.com>](fig/phd101212s.png){alt='Comic: a PhD student sends "FINAL.doc" to their supervisor, but after several increasingly intense and frustrating rounds of comments and revisions they end up with a file named "FINAL_rev.22.comments49.corrections.10.#@$%WHYDIDCOMETOGRADSCHOOL????.doc"'}
 
-We've all been in this situation before: it seems unnecessary to have
-multiple nearly-identical versions of the same document. Some word
-processors let us deal with this a little better, such as Microsoft
-Word's
-[Track Changes](https://support.office.com/en-us/article/Track-changes-in-Word-197ba630-0f5f-4a8e-9a77-3712475e806a),
-Google Docs' [version history](https://support.google.com/docs/answer/190843?hl=en), or
-LibreOffice's [Recording and Displaying Changes](https://help.libreoffice.org/Common/Recording_and_Displaying_Changes).
+We've all been in this situation before. No one needs this many copies of a document with slightly different changes. Some word processors let us deal with this a little better, such as Microsoft Word's [Track Changes](https://support.office.com/en-us/article/Track-changes-in-Word-197ba630-0f5f-4a8e-9a77-3712475e806a), Google Docs' [version history](https://support.google.com/docs/answer/190843?hl=en), or LibreOffice's [Recording and Displaying Changes](https://help.libreoffice.org/Common/Recording_and_Displaying_Changes).
 
-Version control systems start with a base version of the document and
-then record changes you make each step of the way. You can
-think of it as a recording of your progress: you can rewind to start at the base
-document and play back each change you made, eventually arriving at your
-more recent version.
+Version control systems like Git, GitHub, and GitLab, start with a base version of the document and then record changes you make each step of the way. You can think of it as a recording of your progress: you can rewind to start and play back each change you made, eventually arriving at your most recent version.
 
 ![](fig/play-changes.svg){alt='A diagram demonstrating how a single document grows as the result of sequential changes'}
 
-Once you think of changes as separate from the document itself, you
-can then think about "playing back" different sets of changes on the base document, ultimately
-resulting in different versions of that document. For example, two users can make independent
-sets of changes on the same document.
+Once you think of changes as separate from the document itself, you can then think about "playing back" different sets of changes on the base document, ultimately resulting in different versions of that document. For example, two users can make independent sets of changes on the same document.
 
 ![](fig/versions.svg){alt='A diagram with one source document that has been modified in two different ways to produce two different versions of the document'}
 
-Unless multiple users make changes to the same section of the document - a 
-[conflict](../learners/reference.md#conflict) - you can
-incorporate two sets of changes into the same base document.
+Unless multiple users make changes to the same section of the document - a [conflict](../learners/reference.md#conflict) - you can incorporate two sets of changes into the same base document.
 
 ![](fig/merge.svg){alt='A diagram that shows the merging of two different document versions into one document that contains all of the changes from both versions'}
 
-A version control system is a tool that keeps track of these changes for us,
-effectively creating different versions of our files. It allows us to decide
-which changes will be made to the next version (each record of these changes is
-called a [commit](../learners/reference.md#commit)), and keeps useful metadata
-about them. The complete history of commits for a particular project and their
-metadata make up a [repository](../learners/reference.md#repository).
-Repositories can be kept in sync across different computers, facilitating
-collaboration among different people.
-
-:::::::::::::::::::::::::::::::::::::::::  callout
-
-## The Long History of Version Control Systems
-
-Automated version control systems are nothing new.
-Tools like [RCS](https://en.wikipedia.org/wiki/Revision_Control_System), [CVS](https://en.wikipedia.org/wiki/Concurrent_Versions_System), or [Subversion](https://en.wikipedia.org/wiki/Apache_Subversion) have been around since the early 1980s and are used by
-many large companies.
-However, many of these are now considered legacy systems (i.e., outdated) due to various
-limitations in their capabilities.
-More modern systems, such as Git and [Mercurial](https://swcarpentry.github.io/hg-novice/),
-are *distributed*, meaning that they do not need a centralized server to host the repository.
-These modern systems also include powerful merging tools that make it possible for
-multiple authors to work on
-the same files concurrently.
-
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
+A version control system is a tool that keeps track of these changes for us, effectively creating different versions of our files. It allows us to decide which changes will be made to the next version (each record of these changes is called a [commit](../learners/reference.md#commit)), and keeps useful metadata
+about them. The complete history of commits for a particular project and their metadata make up a [repository](../learners/reference.md#repository). Repositories can be kept in sync across different computers, facilitating collaboration among different people.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
@@ -114,20 +73,26 @@ the same files concurrently.
   know who suggested that change, why it was suggested, or when it was
   merged into the rest of the document. Even online word processors like
   Google Docs or Microsoft Office Online do not fully resolve these
-  problems.
-  
-  
+  problems.   
 
-:::::::::::::::::::::::::
+::::::::::::::::::::::::: 
+
+## Version Control Platforms
+
+Today we will explore using the GitLab with RStudio, but how is GitLab different from Git and GitHub?
+
+Git is an open-source tool that tracks your changes. GitHub and GitLab are repositories that collect the complete history of those changes. GitHub offers free and paid plans, and as a member of UW-Madison, you have access to GitLab, which provides additional features such as licensing protections, authentication and identity management through your NetID, and support from DoIT Shared Tools. 
+
+Note that GitLab should not be used for storing large amounts of data (over 2GB). UW-Madison Research Data Services provides a [Data Storage Finder Tool](https://storage.researchdata.wisc.edu/?_gl=1*eqwfyq*_ga*MjY2MjYyMzkwLjE3NDAwNjY2OTE.*_ga_5YLVYCMY8S*MTc0MDE3NTMwNi4xLjEuMTc0MDE3NjM4Mi4wLjAuMA..) and consults on best practices for storing research data.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- Version control is like an unlimited ‘undo’.
+- Version control is like an unlimited 'undo'.
 - Version control also allows many people to work in parallel.
-- Run `sandpaper::check_lesson()` to identify any issues with your lesson
-- Run `sandpaper::build_lesson()` to preview your lesson locally
+- Git is a version control tool, and GitHub and GitLab are repositories that collect the history of those changes.
+- As a member of UW-Madison, you have access to GitLab, which includes additional features.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
