@@ -27,6 +27,8 @@ This lesson will pick up using the ratdat / portal dataset we used in the previo
 To get started we need to setup the project we are going to be working with (both in R/RStudio and in GitLab).
 You can setup the project first in either place but for this example we will start by creating the repository in GitLab.
 
+## Setting up the GitLab Project
+
 First you need to navigate to the [UW-Madison GitLab instance][uw-gitlab] and login with your netid.
 
 Next we will create a new project, you can do so by clicking the "+" button then "new project/repository" icon in the upper-left hand of the screen OR you can click the blue "New Project" button on the right hand side of the screen.
@@ -63,9 +65,32 @@ For example:
 
 ::::::::::::::::::::
 
-Next we will `clone` (copy) this project to our computer and make it a project in RStudio.
+## Setting up the Project in RStudio
 
-First in GitLab we need to click the blue "Code" button on the upper right of our GitLab project.
+Next we will `clone` (copy) this project to our computer and make it a project in RStudio.
+Before we can do so we need to set up verifying our identity with GitLab.
+
+### GitLab Authentication 
+
+We need to set up a special passkey called a Peronal Authenticalion Token (PAT) on GitLab and then we will enter it in RStudio when we need to connect to GitLab.
+
+We need to note both our GitLab username and your PAT so we can use them when we set up the Project on our computer.
+In GitLab you can check your username by clicking on your profile icon in the upper left panel. It will say `@FIRSTNAME.LASTNAME` or something to that effect.
+Note down your username in a text file so you have it available when you need it later.
+
+To setup the PAT, click the "Settings" option on the left hand side (bottom of the left pane), then choose "Access Tokens".
+
+On the "Project access tokens" page, click the "Add new token" button. Give the token a name specfific to the computer you are working from.
+By default, it will expire in a month.  We will leave that setting for now and if you use GitLab after a month, you should go back and give it further permissions or create a new token.
+Select "Owner" as the role.
+Then click "Create project access token".
+
+It will then show the project token in a green box on the screen but we won't be able to access it again so we need to copy it now (we can always setup others if needed later).
+Click the copy button to copy the token. Copy this into a text file.
+
+
+Now that we have set up the authentication, we can create the Project on our computer and setup the connection to GitLab, at the same time.
+In GitLab, we need to click the blue "Code" button on the upper right of our GitLab project.
 Then click the copy button to the right of the "Clone with HTTPS" option.
 
 <!--- screenshot needed: the code menu and the copy button from the clone with HTTPS option highlighted"
@@ -77,33 +102,112 @@ Then switch over to your RStudio window and click the new project button (Or cli
 In the new project wizard, click the "Version Control" option.
 On the next page, click the "Git" option.
 Paste the HTTPS address you copied in the "Repository URL" option.
-It will autofill in the "Project directory name" box with the slug from the URL when you click away from that box, but you can change it if you ever need to.
+It will autofill in the "Project directory name" box with the slug from the URL when you click away from that box, but you can change it if you ever need to (which you will later).
 You may want to change where the project is created in your file system, by default it will likely save it in your home folder/`~`.
 We will change ours to Desktop so we can find it more easily by clicking the "Browse" button, and then choseing our `Desktop` folder and clicking "Open".
 We can then click the "Create project" button.
 
 <!--- screenshots needed of all the project wizard pages with the inputs described above -->
 
-Since we've never authenticated with gitlab before it will ask us for our username.
-We need to go back to GitLab and check our username and setup a personal access token (PAT).
+Since we've never authenticated with GitLab before it will ask us for our username.
+Type or paste your username and token from the text file into the the username and password boxes respectively.
 
-In GitLab you can check your username by clicking on your profile icon in the upper left panel. It will say `@FIRSTNAME.LASTNAME` or something to that effect.  That is your username.
-To setup the PAT, click the "Settings" option on the left hand side (bottom of the left pane), then choose "Access Tokens".
-
-On the "Project access tokens" page, click the "Add new token" button. Give the token a name specfific to the computer you are working from.
-By default, it will expire in a month.  We will leave that setting for now and if you use GitLab after a month, you should go back and give it further permissions or create a new token.
-Select "Owner" as the role.
-Then click "Create project access token".
-
-It will then Show the project token in a green box on the screen but we won't be able to access it again so we need to copy it now (we can always setup others if needed later).
-Click the copy button to copy the token. 
-
-Now that we have copied the token, we need to put it into RStudio.
-Back in RStudio, you need to enter the username you found in GitLab, then press "OK".
-Then it will ask for your "Password", paste your token into the box and press "OK".
+Now you are in the project for the GitLab Project you set up.  You will see the project name in the upper right-hand side of the page.
+The file pane in the lower right quadrant of RStudio will also show the...
+    - `.gitignore` - a file that allows you to have untracked files in the folder on you computer that in the project folder - this was created when we setup the Rproject so git doesn't try to tack some R files that commonly are not tracked with git
+    - `ratdat_lib_wksp.Rproj` - the Rproject folder (this is nice for reopening your project from the file folder) - this was created when we set up the Rproject since it didn't already exist
+    - `README.md` - The documentation file that GitLab created for us when we set up the project
 
 
+## Tracking files with git and RStudio
 
+Let's go check out the "Git" file pane in the upper right quadrant!  It wasn't there until we cloned this git repository/project.
+It currently lists the two files that were created when we set up the project, `ratdat_lib_wksp.Rproj` and `.gitignore`.
+This is because these are new files that have not been tracked with git before.
+
+To track these files in our repository we have to do two steps, first we stage the files and then we commit them to the history of the project/repo.
+To stage the files in Rstudio, we can click the button in the "Staged" column of the Git pane.
+When we do this, the status of each file changes from "? ?" to "A" for "Added to the stage".
+Then to commit them, we can click the commit button in the menu of the Git pane.
+
+This pops up a window to "Review Changes" where we can click through the files and see what has changed.
+Since both these files are new, they show a big green section of lines in the files.  This is called the "diff" it shows the difference before and after the commit. In this case, all new lines were added and are in green.
+We could also unstage/reset the files if we decide we don't want to commit them both at the same time (typically you will commit linked changes together but can commit unlinked changes separately).
+
+To commit these changes we also have to write a message about what has changed in this commit in the "Commit message" box.
+We will type, "Adding Rproj and gitignore files" and then we can click "Commit"
+
+A git commit window will pop up and have a message that includes a unique identifier code for the commit (called a hash), our commit message, and a summary of what changed in that commit.
+We can then click "close" on the window. We can also close the "Review Changes" window.
+Now all the files in our project have been tracked with git.  We can tell by looking at the "Git pane" because there are not files listed.
+This means there are no new files and no new changes to existing files in our project since we last committed it.
+
+
+::::::: challenge
+
+### Create an R script
+
+Let's practice adding new files and tracking them with git.
+
+Create and Rscript with the following code and then track it with git using the steps we learned.
+
+```
+library(ratdat)
+library(tidyverse)
+
+yearly_counts <- complete_old %>%
+  count(year, species_id)
+
+ggplot(yearly_counts,
+       aes(x = year, y = n)) +
+       geom_line()
+```
+
+
+::: solution
+
+1. Copy the code above
+2. Create a new Rscript file
+3. Paste the code into the Rscript
+5. Run your R code. Make sure it works before we commit it.
+4. Add the file by clicking the staged checkbox in the Git pane
+5. Click the commit button in the Git pane
+6. Add a commit message and click "Commit"
+
+:::::::::::::
+
+:::::::::::::::::
+
+Now that we have created the file, we notice that our plot looks a bit odd, we need to tell it the groups are the species id's and should be separate lines. 
+We can color the lines differently at the same time by adding `color = species_id` to our `aes()` function
+Let's do so and then save that new version of the file to git.
+
+The code should now be
+```
+library(ratdat)
+library(tidyverse)
+
+yearly_counts <- complete_old %>%
+  count(year, species_id)
+
+ggplot(yearly_counts,
+       aes(x = year, y = n,
+           color = species_id)) +
+       geom_line()
+```
+
+Now that we've made this change, we can commit this new version. Like new files, modified files show up in the Git pane.
+Notice this time the status is "M" for modified instead of "? ?" like it was for a new file.
+We can still stage it and commit it just as we did with the new file by clicking the checkbox to stage it, clicking commit, then adding a commit message.
+Note, before you commit that the Review Changes window how shows red for the previous lines in our code and green for the new lines in our code.
+Also the number lines for the removed lines are in the first column and the numbers for the new lines are in the second column.
+
+## Exploring the history of our file changes
+
+The Git pane has several other features for working with git in RStudio, the other one we will point out is the history part of the "Review Changes" window.
+To open it directly you can click the click icon on the Git pane menu.
+You can access it by clicking the "History" toggle in the Review Changes window, when it is already open.
+The history pane now shows the "timeline" of commits we've added so far, authorship info, and we can click through them to see the diffs for each one. 
 
 <!---
 Outline:
@@ -112,6 +216,7 @@ Outline:
 - setup ssh key
 - add code from previous session to script
 - make changes to code from previous session
+THIS IS ALL YOU HAVE LEFT TO WRITE, SARAH! THEN LOOK AT THE ISSUES
 - push changes back to gitLab
 
 
