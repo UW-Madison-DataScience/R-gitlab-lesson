@@ -46,7 +46,7 @@ usethis::use_git_config(user.name="Your Name", user.email="your.email@example.co
 
 Finally, you can check your configuration
 ```r
-git_sitrep()
+usethis::git_sitrep()
 ```
 
 ## Setting up the GitLab Project
