@@ -27,6 +27,28 @@ This lesson will pick up using the ratdat / portal dataset we used in the previo
 To get started we need to setup the project we are going to be working with (both in R/RStudio and in GitLab).
 You can setup the project first in either place but for this example we will start by creating the repository in GitLab.
 
+## Configuring Git on You computer
+
+Each time we save something into our git history, it associates an email address and a name with it.
+Before we get started we will need to configure those using a package called `usethis`.
+
+First we will install `usethis` in the console by typing:
+
+```r
+install.packages("usethis")
+```
+
+Once it finishes we will configure the `user.name` and `user.email` variables to use.
+
+```r
+usethis::use_git_config(user.name="Your Name", user.email="your.email@example.com")
+```
+
+Finally, you can check your configuration
+```r
+git_sitrep()
+```
+
 ## Setting up the GitLab Project
 
 First you need to navigate to the [UW-Madison GitLab instance][uw-gitlab] and select the UW-Madison NetID login option.
