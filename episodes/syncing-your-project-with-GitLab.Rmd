@@ -1,0 +1,76 @@
+
+---
+title: "Syncing your project with GitLab"
+teaching: 10
+exercises: 2
+---
+
+:::::::::::::::::::::::::::::::::::::: questions
+
+- How do you keep your project synced using GitLab?
+- Why should you consider using UW-Madison instance of GitLab?
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: objectives
+
+- Simulate how to pull and push between two different "computers".
+- Discuss what are the advantages of using [UW-Madison Gitlab instance](https://git.doit.wisc.edu) vs Github.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+## Pushing and pulling between two computers
+
+Let's pretend for a minute that you have a computer at home and one at work. It would be nice your work is kept synced between the two locations. Git + GitLab can help with this.
+
+We are going to simulate the two computers situations by creating a copy of your project in a different location on the computer your are not working on.
+
+The key dynamic we want to follow is *push and pull*.
+
+1. After completing a task, *push* to the remote repo; that way your work is saved to GitLab.
+2. When you got to your second device, *pull*; your saved work is pulled from the remote repo into your "work device".
+
+To create a copy of the project on your "work computer", we are going to practice cloning a project from GitLab
+
+- Go to your repo on GitLab and grab the `Clone with SSH` url from the `Code` button. 
+- On RStudio, go to `File` > `New Project`. This will open a popup window. Pick the `Version Control` option. Pick `Git` and click `Next`. 
+- The next window gives you a place to paste the url you got from GitLab and the location on your computer to create the project. Navigate to your `Documents` folder and name it `work-computer`. 
+- Click `Create Project`. Git will make a copy of your project in this new location. Now you have two computers to practice pushing and pulling from each other!
+
+
+
+
+
+
+<!-- :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor -->
+
+<!-- Inline instructor notes can help inform instructors of timing challenges -->
+<!-- associated with the lessons. They appear in the "Instructor View" -->
+
+<!-- :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+## Challenge 1: How does this worklow affects you? 
+
+- Does your usual workflow requires using two computers?
+- Do you see yourself using this workflow on a daily basis?
+- What questions do you have? 
+
+:::::::::::::::::::::::: solution
+
+## Output
+
+Open the floor for discussions and/or questions from the learners. 
+
+:::::::::::::::::::::::::::::::::
+
+Why should you consider using GitLab (rather than GitHub)
+
+::::::::::::::::::::::::::::::::::::: callout
+
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+
