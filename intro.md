@@ -1,124 +1,81 @@
 ---
-title: "Using RMarkdown"
+title: "Introduction to Version Control and GitLab"
 teaching: 10
 exercises: 2
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- How do you write a lesson using R Markdown and `{sandpaper}`?
+- What is Version Control?
+- What is the difference between Git, GitHub, and GitLab?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Explain how to use markdown with the new lesson template
-- Demonstrate how to include pieces of code, figures, and nested challenge blocks
+- Understand the utility and benefits of automated version control systems.
+- Differentiate between Git, GitHub, and GitLab.
+- Explain why GitLab was chosen over other platforms like GitHub.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Introduction
+*This lesson is based on [Software Carpentry's Git Novice Lesson](https://swcarpentry.github.io/git-novice/)* and images are reused from that lesson.
 
-This is a lesson created via The Carpentries Workbench. It is written in
-[Pandoc-flavored Markdown](https://pandoc.org/MANUAL.txt) for static files and
-[R Markdown][r-markdown] for dynamic files that can render code into output. 
-Please refer to the [Introduction to The Carpentries 
-Workbench](https://carpentries.github.io/sandpaper-docs/) for full documentation.
+We'll start by exploring how version control can be used to keep track of what one person did and when. Even if you aren't collaborating with other people,
+automated version control is much better than this situation:
 
-What you need to know is that there are three sections required for a valid
-Carpentries lesson template:
+!["notFinal.doc" by Jorge Cham, <https://www.phdcomics.com>](fig/phd101212s.png){alt='Comic: a PhD student sends "FINAL.doc" to their supervisor, but after several increasingly intense and frustrating rounds of comments and revisions they end up with a file named "FINAL_rev.22.comments49.corrections.10.#@$%WHYDIDCOMETOGRADSCHOOL????.doc"'}
 
- 1. `questions` are displayed at the beginning of the episode to prime the
-    learner for the content.
- 2. `objectives` are the learning objectives for an episode displayed with
-    the questions.
- 3. `keypoints` are displayed at the end of the episode to reinforce the
-    objectives.
+Unfortunately, this might look too familiar to many of us. Even when using software that allows for tracking changes, such as Microsoft Word or LibreOffice, when saving many versions of the same document, it can be difficult to find when a change occured. Google Docs allows for some versioning in the same document, but there is little control over what is saved when, and there is no quick way to see the change history.
 
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
+Version control systems like Git, GitHub, and GitLab, start with a base version of your document and allow you to record the changes that you have made with descriptive notes. You can think of it as a log of your progress that you control.
 
-Inline instructor notes can help inform instructors of timing challenges
-associated with the lessons. They appear in the "Instructor View"
+![](fig/play-changes.svg){alt='A diagram demonstrating how a single document grows as the result of sequential changes'}
 
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+With the record of changes, you can also return to different points in the document's history. In fact, two users can make independent sets of changes on the same document.
 
-::::::::::::::::::::::::::::::::::::: challenge 
+![](fig/versions.svg){alt='A diagram with one source document that has been modified in two different ways to produce two different versions of the document'}
 
-## Challenge 1: Can you do it?
+Unless multiple users make changes to the same section of the document - a [conflict](../learners/reference.md#conflict) - you can incorporate two sets of changes into the same base document.
 
-What is the output of this command?
+![](fig/merge.svg){alt='A diagram that shows the merging of two different document versions into one document that contains all of the changes from both versions'}
 
-```r
-paste("This", "new", "lesson", "looks", "good")
-```
+A version control system is a tool that allows you to take control of recording the changes to your documents, effectively creating different versions of the same file. It also allows you to decide which changes will be made to the next version (each record of these changes is called a [commit](../learners/reference.md#commit)), and keeps useful metadata about them. The complete history of commits for a particular project and their metadata make up a [repository](../learners/reference.md#repository). Repositories can be kept in sync across different computers, facilitating collaboration among different people.
 
-:::::::::::::::::::::::: solution 
+:::::::::::::::::::::::::::::::::::::::  challenge
 
-## Output
- 
-```output
-[1] "This new lesson looks good"
-```
+## Paper Writing
 
-:::::::::::::::::::::::::::::::::
+- Imagine you drafted an excellent paragraph for a paper you are writing, but later ruin it. How would you retrieve the *excellent* version of your conclusion? Is it even possible?
 
-::::::::::::::::::::::::::::::::::::::::::::::::
+- Imagine you have 5 co-authors. How would you manage the changes and comments they make to your paper? If you use LibreOffice Writer or Microsoft Word, what happens if you accept changes made using the `Track Changes` option? Do you have a history of those changes?
 
-## Figures
+:::::::::::::::  solution
 
-You can also include figures generated from R Markdown:
+## Solution
 
+- Recovering the excellent version is only possible if you created a copy of the old version of the paper. The danger of losing good versions often leads to the problematic workflow illustrated in the PhD Comics cartoon at the top of this page.
 
-``` r
-pie(
-  c(Sky = 78, "Sunny side of pyramid" = 17, "Shady side of pyramid" = 5), 
-  init.angle = 315, 
-  col = c("deepskyblue", "yellow", "yellow3"), 
-  border = FALSE
-)
-```
+- Collaborative writing with traditional word processors is cumbersome. Either every collaborator has to work on a document sequentially (slowing down the process of writing), or you have to send out a version to all collaborators and manually merge their comments into your document. The 'track changes' or 'record changes' option can highlight changes for you and simplifies merging, but as soon as you accept changes you will lose their history. You will then no longer know who suggested that change, why it was suggested, or when it was merged into the rest of the document. Even online word processors like Google Docs or Microsoft Office Online do not fully resolve these problems.   
 
-<div class="figure" style="text-align: center">
-<img src="fig/intro-rendered-pyramid-1.png" alt="pie chart illusion of a pyramid"  />
-<p class="caption">Sun arise each and every morning</p>
-</div>
+::::::::::::::::::::::::: 
 
-Or you can use standard markdown for static figures with the following syntax:
+## Version Control Platforms
 
-`![optional caption that appears below the figure](figure url){alt='alt text for
-accessibility purposes'}`
+Today we will explore using the GitLab with RStudio, but how is GitLab different from Git and GitHub?
 
-![bla bla bla](images/mycoolimage.png){alt='description of my figure so it is undestanable without seeing it'}
+Git is an open-source tool that tracks your changes. GitHub and GitLab are hosts on the web that collect the complete history of those changes. GitHub offers free and paid plans, and as a member of UW-Madison, you have access to GitLab, which provides additional features such as licensing protections, authentication and identity management through your NetID, and support from DoIT Shared Tools. 
 
-![You belong in The Carpentries!](https://raw.githubusercontent.com/carpentries/logo/master/Badge_Carpentries.svg){alt='Blue Carpentries hex person logo with no text.'}
+Note that GitLab should not be used for storing large amounts of data (over 2GB). UW-Madison Research Data Services provides a [Data Storage Finder Tool](https://storage.researchdata.wisc.edu/?_gl=1*eqwfyq*_ga*MjY2MjYyMzkwLjE3NDAwNjY2OTE.*_ga_5YLVYCMY8S*MTc0MDE3NTMwNi4xLjEuMTc0MDE3NjM4Mi4wLjAuMA..) and consults on best practices for storing research data.
 
-::::::::::::::::::::::::::::::::::::: callout
-
-Callout sections can highlight information.
-
-They are sometimes used to emphasise particularly important points
-but are also used in some lessons to present "asides": 
-content that is not central to the narrative of the lesson,
-e.g. by providing the answer to a commonly-asked question.
-
-::::::::::::::::::::::::::::::::::::::::::::::::
-
-
-## Math
-
-One of our episodes contains $\LaTeX$ equations when describing how to create
-dynamic reports with {knitr}, so we now use mathjax to describe this:
-
-`$\alpha = \dfrac{1}{(1 - \beta)^2}$` becomes: $\alpha = \dfrac{1}{(1 - \beta)^2}$
-
-Cool, right?
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- Use `.md` files for episodes when you want static content
-- Use `.Rmd` files for episodes when you need to generate output
-- Run `sandpaper::check_lesson()` to identify any issues with your lesson
-- Run `sandpaper::build_lesson()` to preview your lesson locally
+- Version control is like an unlimited 'undo'.
+- Version control also allows many people to work in parallel.
+- Git is a version control tool, and GitHub and GitLab are repositories that collect the history of those changes.
+- As a member of UW-Madison, you have access to GitLab, which includes additional features.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
