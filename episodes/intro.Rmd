@@ -2,7 +2,6 @@
 title: "Introduction to Version Control and GitLab"
 teaching: 10
 exercises: 2
-based on: Software Carpentry Git-Novice Lesson
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
@@ -19,6 +18,8 @@ based on: Software Carpentry Git-Novice Lesson
 - Explain why GitLab was chosen over other platforms like GitHub.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
+
+*This lesson is based on [Software Carpentry's Git Novice Lesson](https://swcarpentry.github.io/git-novice/)* and images are reused from that lesson.
 
 We'll start by exploring how version control can be used to keep track of what one person did and when. Even if you aren't collaborating with other people,
 automated version control is much better than this situation:
@@ -63,7 +64,7 @@ A version control system is a tool that allows you to take control of recording 
 
 Today we will explore using the GitLab with RStudio, but how is GitLab different from Git and GitHub?
 
-Git is an open-source tool that tracks your changes. GitHub and GitLab are repositories that collect the complete history of those changes. GitHub offers free and paid plans, and as a member of UW-Madison, you have access to GitLab, which provides additional features such as licensing protections, authentication and identity management through your NetID, and support from DoIT Shared Tools. 
+Git is an open-source tool that tracks your changes. GitHub and GitLab are hosts on the web that collect the complete history of those changes. GitHub offers free and paid plans, and as a member of UW-Madison, you have access to GitLab, which provides additional features such as licensing protections, authentication and identity management through your NetID, and support from DoIT Shared Tools. 
 
 Note that GitLab should not be used for storing large amounts of data (over 2GB). UW-Madison Research Data Services provides a [Data Storage Finder Tool](https://storage.researchdata.wisc.edu/?_gl=1*eqwfyq*_ga*MjY2MjYyMzkwLjE3NDAwNjY2OTE.*_ga_5YLVYCMY8S*MTc0MDE3NTMwNi4xLjEuMTc0MDE3NjM4Mi4wLjAuMA..) and consults on best practices for storing research data.
 
