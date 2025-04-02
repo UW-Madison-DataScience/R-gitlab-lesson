@@ -209,15 +209,17 @@ To open it directly you can click the click icon on the Git pane menu.
 You can access it by clicking the "History" toggle in the Review Changes window, when it is already open.
 The history pane now shows the "timeline" of commits we've added so far, authorship info, and we can click through them to see the diffs for each one. 
 
-<!---
-Outline:
-- setup gitlab repo
-- clone repo into rstudio project
-- setup ssh key
-- add code from previous session to script
-- make changes to code from previous session
-THIS IS ALL YOU HAVE LEFT TO WRITE, SARAH! THEN LOOK AT THE ISSUES
-- push changes back to gitLab
+## Time to push it!
 
+Finally we can sync these changes with GitLab.  Everything, besides the original setup, we have done so far has been on our local computer.
+If we reload the GitLab project, nothing has changed.  The commits we made aren't there, nor is the script we created.
+To get our changes to GitLab we have to "push" them.
+In the git pane, we can click the green up arrow. This will then pop up a status as it transfers the changes.
 
--->
+Now in GitLab we can reload the page and we can see the script and our most recent changes.  
+In GitLab, try exploring the files by clicking on them. You can also see the commits and their diffs by clicking on the "X commits" (where X is the number of commits you've made) link
+in the right hand menu or by clicking "Code" and "Commits" buttons on the left hand menus.
+
+We've now learned the basis of working with git and GitLab in Rstudio. The setup steps will only need be done once per repository or computer.
+The snapshot steps of checking the box (adding a file to stage) and commiting will be done each time you create or modify a file (script).
+The syncying step(s) of pushing (and pulling which we will see in the next section) will be done at least when you come to a stopping point (or starting point for pushing).
