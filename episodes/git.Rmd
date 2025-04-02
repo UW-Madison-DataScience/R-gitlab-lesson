@@ -16,7 +16,7 @@ exercises: 2
 - Identify the location and functionality of Git integration within RStudio
 - Create a repository in GitLab for version control
 - Clone a GitLab repository as a project in RStudio
-- Make changes to the project, add, and commit them using Git
+- Make changes to the project, add, and commit them using git
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -29,13 +29,13 @@ You can setup the project first in either place but for this example we will sta
 
 ## Setting up the GitLab Project
 
-First you need to navigate to the [UW-Madison GitLab instance][uw-gitlab] and login with your netid.
+First you need to navigate to the [UW-Madison GitLab instance][uw-gitlab] and select the UW-Madison NetID login option.
 
-Next we will create a new project, you can do so by clicking the "+" button then "new project/repository" icon in the upper-left hand of the screen OR you can click the blue "New Project" button on the right hand side of the screen.
+Next we will create a new project. You can do so by clicking the "+" button then "New project/repository" option in the upper-left hand of the screen OR you can click the blue "New Project" button on the right hand side of the screen. If you do not see the "+" button, it might mean that your sidebar is hidden. To see the sidebar, click the sidebar icon at the top left of your screen.
 
 <!--- screenshot needed: gitlab interface highlighting the + button and new project/repo and new project button -->
 
-On the "Create new project" page, choose "Create a blank project".
+On the "Create new project" page, choose "Create blank project".
 
 <!--- screenshot needed: Create new project page -->
 
@@ -47,11 +47,11 @@ You also need to choose the visiability level.  You can decide what level of vis
 I'll make mine public so I can share it with you direclty if you are interested.
 You can also decide if you would like it to create a README for your project.  Best practice is to have a README for any project so we will keep it checked.
 We will skip the option for security testing but this could be an option you want to enable for your code projects.
-Then click the "Create project button".
+Then click the "Create project" button.
 
 <!--- screenshots needed: the create new project page with the options given in the paragraph above highlighted-->
 
-Now that we have created the project we can see the repository.  It created a nice README start, that is show at the bottom.
+Now that we have created the project we can see the repository.  It created a nice README template at the bottom.
 
 <!--- screenshot needed: view of the project repo after creation -->
 
@@ -75,14 +75,15 @@ Before we can do so we need to set up verifying our identity with GitLab.
 We need to set up a special passkey called a Peronal Authenticalion Token (PAT) on GitLab and then we will enter it in RStudio when we need to connect to GitLab.
 
 We need to note both our GitLab username and your PAT so we can use them when we set up the Project on our computer.
-In GitLab you can check your username by clicking on your profile icon in the upper left panel. It will say `@FIRSTNAME.LASTNAME` or something to that effect.
+In GitLab you can check your username by clicking on your profile icon in the upper left panel. It will say `@FIRSTNAME.LASTNAME` or your `@NetID`, or something to that effect.
 Note down your username in a text file so you have it available when you need it later.
 
 To setup the PAT, click the "Settings" option on the left hand side (bottom of the left pane), then choose "Access Tokens".
 
-On the "Project access tokens" page, click the "Add new token" button. Give the token a name specfific to the computer you are working from.
+On the "Project access tokens" page, click the "Add new token" button. Give the token a name specific to the computer you are working from. You can leave the Token description blank.
 By default, it will expire in a month.  We will leave that setting for now and if you use GitLab after a month, you should go back and give it further permissions or create a new token.
 Select "Owner" as the role.
+You can leave all the options under "Select Scopes" unchecked, these would be needed if you were setting fine-grained permissions for your token.
 Then click "Create project access token".
 
 It will then show the project token in a green box on the screen but we won't be able to access it again so we need to copy it now (we can always setup others if needed later).
