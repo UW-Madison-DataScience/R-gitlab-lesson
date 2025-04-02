@@ -1,5 +1,5 @@
 ---
-title: "Using RMarkdown"
+title: "Using git in RStudio"
 teaching: 10
 exercises: 2
 ---
