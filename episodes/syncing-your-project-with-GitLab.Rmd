@@ -21,9 +21,9 @@ exercises: 2
 
 ## Pushing and pulling between two computers
 
-Let's pretend for a minute that you have a computer at home and one at work. It would be nice your work is kept synced between the two locations. Git + GitLab can help with this.
+Let's pretend for a minute that you have a computer at home and one at work. It would be nice if your work is kept synced between the two locations. Git + GitLab can help with this.
 
-We are going to simulate the two computers situations by creating a copy of your project in a different location on the computer your are not working on.
+We are going to simulate the two computers situations by creating a copy of your project in a different location on the computer your are working on.
 
 The key dynamic we want to follow is *push and pull*.
 
@@ -32,7 +32,7 @@ The key dynamic we want to follow is *push and pull*.
 
 To create a copy of the project on your "work computer", we are going to practice cloning a project from GitLab
 
-- Go to your repo on GitLab and grab the `Clone with SSH` url from the `Code` button. 
+- Go to your repo on GitLab and grab the `Clone with HTTPS` url from the `Code` button. 
 - On RStudio, go to `File` > `New Project`. This will open a popup window. Pick the `Version Control` option. Pick `Git` and click `Next`. 
 - The next window gives you a place to paste the url you got from GitLab and the location on your computer to create the project. Navigate to your `Documents` folder and name it `work-computer`. 
 - Click `Create Project`. Git will make a copy of your project in this new location. Now you have two computers to practice pushing and pulling from each other!
@@ -55,7 +55,7 @@ To create a copy of the project on your "work computer", we are going to practic
 
 - Does your usual workflow requires using two computers?
 - Do you see yourself using this workflow on a daily basis?
-- What questions do you have? 
+- What challenges do you anticipate?  
 
 :::::::::::::::::::::::: solution
 
@@ -65,12 +65,12 @@ Open the floor for discussions and/or questions from the learners.
 
 :::::::::::::::::::::::::::::::::
 
-Why should you consider using GitLab (rather than GitHub)
+## Why should you consider using GitLab (rather than GitHub)
 
-::::::::::::::::::::::::::::::::::::: callout
+- You might want to have your project associated with UW-Madison, for publication purposes, for example.  
+- For advanced users, you might want to take advantage of integrations  with resources. Being on campus IP space and using AD for authentication facilitates that process. 
+- GitLab code base is open source, which means you can modify and extend it to suit your needs. That is why UW-Madison GitLab instance is hosted and maintained on-prem. 
+- It is, however, fairly easy to move repos from GitLab to GitHub and vice versa. You start on one and later decide to move to other. 
 
-
-
-::::::::::::::::::::::::::::::::::::::::::::::::
 
 
