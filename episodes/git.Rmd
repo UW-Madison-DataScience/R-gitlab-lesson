@@ -113,12 +113,12 @@ Click the copy button to copy the token. Copy this into a text file.
 
 
 Now that we have set up the authentication, we can create the Project on our computer and setup the connection to GitLab, at the same time.
-In GitLab, we need to click the blue "Code" button on the upper right of our GitLab project.
+In GitLab, return to your new project directory `ratdat_lib_wksp` by clicking the link at the top of the page. Then click the blue "Code" button at the top of the directory information.
 Then click the copy button to the right of the "Clone with HTTPS" option.
 
 <!--- screenshot needed: the code menu and the copy button from the clone with HTTPS option highlighted"
 
-Then switch over to your RStudio window and click the new project button (Or click File > New Project).
+Open RStudio and create a new project with the +shield icon or `File` > `New Project`.
 
 <!--- screenshot needed: highligting the new project button -->
 
@@ -149,9 +149,9 @@ It currently lists the two files that were created when we set up the project, `
 This is because these are new files that have not been tracked with git before.
 
 To track these files in our repository we have to do two steps, first we stage the files and then we commit them to the history of the project/repo.
-To stage the files in Rstudio, we can click the button in the "Staged" column of the Git pane.
+To stage the files in Rstudio, we can click the checkboxes in the "Staged" column of the Git pane.
 When we do this, the status of each file changes from "? ?" to "A" for "Added to the stage".
-Then to commit them, we can click the commit button in the menu of the Git pane.
+Then to commit them, we can click the "Commit pending changes" icon in the Git pane.
 
 This pops up a window to "Review Changes" where we can click through the files and see what has changed.
 Since both these files are new, they show a big green section of lines in the files.  This is called the "diff" it shows the difference before and after the commit. In this case, all new lines were added and are in green.
@@ -241,7 +241,7 @@ In the git pane, we can click the green up arrow. This will then pop up a status
 
 Now in GitLab we can reload the page and we can see the script and our most recent changes.  
 In GitLab, try exploring the files by clicking on them. You can also see the commits and their diffs by clicking on the "X commits" (where X is the number of commits you've made) link
-in the right hand menu or by clicking "Code" and "Commits" buttons on the left hand menus.
+in the right hand "Project Information" menu or by clicking "Code" and "Commits" buttons on the left hand GitLab menu.
 
 We've now learned the basis of working with git and GitLab in Rstudio. The setup steps will only need be done once per repository or computer.
 The snapshot steps of checking the box (adding a file to stage) and commiting will be done each time you create or modify a file (script).
