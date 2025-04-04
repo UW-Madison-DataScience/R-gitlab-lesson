@@ -64,6 +64,8 @@ Open the floor for discussions and/or questions from the learners.
 
 :::::::::::::::::::::::::::::::::
 
+:::::::::::::::::::::::::::::::::::::::::::::::
+
 ## Why should you consider using GitLab (rather than GitHub)
 
 - You might want to have your project associated with UW-Madison, for publication purposes, for example.  
