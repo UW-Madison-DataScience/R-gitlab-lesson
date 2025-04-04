@@ -1,131 +1,77 @@
 ---
-title: "Using RMarkdown"
+title: "Syncing your project with GitLab"
 teaching: 10
 exercises: 2
 ---
 
-:::::::::::::::::::::::::::::::::::::: questions 
+:::::::::::::::::::::::::::::::::::::: questions
 
-- How do you write a lesson using R Markdown and `{sandpaper}`?
+- How do you keep your project synced using GitLab?
+- Why should you consider using UW-Madison instance of GitLab?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Explain how to use markdown with the new lesson template
-- Demonstrate how to include pieces of code, figures, and nested challenge blocks
+- Simulate how to pull and push between two different "computers".
+- Discuss what are the advantages of using [UW-Madison Gitlab instance](https://git.doit.wisc.edu) vs Github.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Introduction
+## Pushing and pulling between two computers
 
-This is a lesson created via The Carpentries Workbench. It is written in
-[Pandoc-flavored Markdown](https://pandoc.org/MANUAL.txt) for static files and
-[R Markdown][r-markdown] for dynamic files that can render code into output. 
-Please refer to the [Introduction to The Carpentries 
-Workbench](https://carpentries.github.io/sandpaper-docs/) for full documentation.
+Let's pretend for a minute that you have a computer at home and one at work. It would be nice if your work is kept synced between the two locations. Git + GitLab can help with this.
 
-What you need to know is that there are three sections required for a valid
-Carpentries lesson template:
+We are going to simulate the two computers situations by creating a copy of your project in a different location on the computer your are working on.
 
- 1. `questions` are displayed at the beginning of the episode to prime the
-    learner for the content.
- 2. `objectives` are the learning objectives for an episode displayed with
-    the questions.
- 3. `keypoints` are displayed at the end of the episode to reinforce the
-    objectives.
+The key dynamic we want to follow is *push and pull*.
 
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
+1. After completing a task, *push* to the remote repo; that way your work is saved to GitLab.
+2. When you got to your second device, *pull*; your saved work is pulled from the remote repo into your "work device".
 
-Inline instructor notes can help inform instructors of timing challenges
-associated with the lessons. They appear in the "Instructor View"
+To create a copy of the project on your "work computer", we are going to practice cloning a project from GitLab
 
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+- Go to your repo on GitLab and grab the `Clone with HTTPS` url from the `Code` button. 
+- On RStudio, go to `File` > `New Project`. This will open a popup window. Pick the `Version Control` option. Pick `Git` and click `Next`. 
+- The next window gives you a place to paste the url you got from GitLab and the location on your computer to create the project. Navigate to your `Documents` folder and name it `work-computer`. 
+- Click `Create Project`. Git will make a copy of your project in this new location. Now you have two computers to practice pushing and pulling from each other!
 
-::::::::::::::::::::::::::::::::::::: challenge 
 
-## Challenge 1: Can you do it?
 
-What is the output of this command?
 
-```r
-paste("This", "new", "lesson", "looks", "good")
-```
 
-:::::::::::::::::::::::: solution 
+
+<!-- :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor -->
+
+<!-- Inline instructor notes can help inform instructors of timing challenges -->
+<!-- associated with the lessons. They appear in the "Instructor View" -->
+
+<!-- :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+## Challenge 1: How does this worklow affects you? 
+
+- Does your usual workflow requires using two computers?
+- Do you see yourself using this workflow on a daily basis?
+- What challenges do you anticipate?  
+
+:::::::::::::::::::::::: solution
 
 ## Output
- 
-```output
-[1] "This new lesson looks good"
-```
+
+Open the floor for discussions and/or questions from the learners. 
 
 :::::::::::::::::::::::::::::::::
 
+:::::::::::::::::::::::::::::::::::::::::::::::
 
-## Challenge 2: how do you nest solutions within challenge blocks?
+## Why should you consider using GitLab (rather than GitHub)
 
-:::::::::::::::::::::::: solution 
-
-You can add a line with at least three colons and a `solution` tag.
-
-:::::::::::::::::::::::::::::::::
-::::::::::::::::::::::::::::::::::::::::::::::::
-
-## Figures
-
-You can also include figures generated from R Markdown:
+- You might want to have your project associated with UW-Madison, for publication purposes, for example.  
+- For advanced users, you might want to take advantage of integrations  with resources. Being on campus IP space and using AD for authentication facilitates that process. 
+- GitLab code base is open source, which means you can modify and extend it to suit your needs. That is why UW-Madison GitLab instance is hosted and maintained on-prem. 
+- It is, however, fairly easy to move repos from GitLab to GitHub and vice versa. You start on one and later decide to move to other. 
 
 
-``` r
-pie(
-  c(Sky = 78, "Sunny side of pyramid" = 17, "Shady side of pyramid" = 5), 
-  init.angle = 315, 
-  col = c("deepskyblue", "yellow", "yellow3"), 
-  border = FALSE
-)
-```
 
-<div class="figure" style="text-align: center">
-<img src="fig/gitlab-rendered-pyramid-1.png" alt="pie chart illusion of a pyramid"  />
-<p class="caption">Sun arise each and every morning</p>
-</div>
-
-Or you can use standard markdown for static figures with the following syntax:
-
-`![optional caption that appears below the figure](figure url){alt='alt text for
-accessibility purposes'}`
-
-![You belong in The Carpentries!](https://raw.githubusercontent.com/carpentries/logo/master/Badge_Carpentries.svg){alt='Blue Carpentries hex person logo with no text.'}
-
-::::::::::::::::::::::::::::::::::::: callout
-
-Callout sections can highlight information.
-
-They are sometimes used to emphasise particularly important points
-but are also used in some lessons to present "asides": 
-content that is not central to the narrative of the lesson,
-e.g. by providing the answer to a commonly-asked question.
-
-::::::::::::::::::::::::::::::::::::::::::::::::
-
-
-## Math
-
-One of our episodes contains $\LaTeX$ equations when describing how to create
-dynamic reports with {knitr}, so we now use mathjax to describe this:
-
-`$\alpha = \dfrac{1}{(1 - \beta)^2}$` becomes: $\alpha = \dfrac{1}{(1 - \beta)^2}$
-
-Cool, right?
-
-::::::::::::::::::::::::::::::::::::: keypoints 
-
-- Use `.md` files for episodes when you want static content
-- Use `.Rmd` files for episodes when you need to generate output
-- Run `sandpaper::check_lesson()` to identify any issues with your lesson
-- Run `sandpaper::build_lesson()` to preview your lesson locally
-
-::::::::::::::::::::::::::::::::::::::::::::::::
-
-[r-markdown]: https://rmarkdown.rstudio.com/
