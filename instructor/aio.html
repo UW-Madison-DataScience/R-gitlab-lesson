@@ -605,7 +605,7 @@ created a nice README template at the bottom.</p>
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
 <div class="accordion-body">
 <p>You may want to give a short orentation to the different parts of the
 GitLab project webpage that seem relevant here: For example: - the file
@@ -754,7 +754,7 @@ using the steps we learned.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>Copy the code above</li>
@@ -893,6 +893,9 @@ your work is saved to GitLab.</li>
 <li>When you got to your second device, <em>pull</em>; your saved work
 is pulled from the remote repo into your “work device”.</li>
 </ol>
+<div class="section level3">
+<h3 id="creating-a-copy-of-the-code-on-a-new-work-computer">Creating a copy of the code on a “new work computer”<a class="anchor" aria-label="anchor" href="#creating-a-copy-of-the-code-on-a-new-work-computer"></a>
+</h3>
 <p>To create a copy of the project on your “work computer”, we are going
 to practice cloning a project from GitLab</p>
 <ul>
@@ -903,19 +906,118 @@ This will open a popup window. Pick the <code>Version Control</code>
 option. Pick <code>Git</code> and click <code>Next</code>.</li>
 <li>The next window gives you a place to paste the url you got from
 GitLab and the location on your computer to create the project. Navigate
-to your <code>Documents</code> folder and name it
-<code>work-computer</code>.</li>
+to your <code>Documents</code> folder and name the project
+<code>work-computer-ratdat</code>.</li>
 <li>Click <code>Create Project</code>. Git will make a copy of your
 project in this new location. Now you have two computers to practice
 pushing and pulling from each other!</li>
 </ul>
-<!-- :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor --><!-- Inline instructor notes can help inform instructors of timing challenges --><!-- associated with the lessons. They appear in the "Instructor View" --><!-- :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: --><div id="challenge-1-how-does-this-worklow-affects-you" class="callout challenge">
+<p>You many now have up two copies of the same project. You can tell
+which one is meant to represent which computer by looking at the project
+name in the upper right hand corner. The original “Desktop” project is
+called “ratdat_lib_wksp”, where the 2nd computer is called
+“work-computer-ratdat”. If we were really working on them on separate
+computers, we would probably have kept them both with the same name, but
+to illlustrate the different computers and practice syncying between
+them, we used the option to change the name when cloning it.</p>
+</div>
+<div class="section level3">
+<h3 id="syncing-code-between-the-two-computers-using-gitlab">Syncing code between the two computers using GitLab<a class="anchor" aria-label="anchor" href="#syncing-code-between-the-two-computers-using-gitlab"></a>
+</h3>
+<p>Let’s practice swtiching between our two computers.</p>
+<p>While we are on our work computer we come up with a great idea for
+our plot, we should make this plot only with the more abundant species.
+First, make sure you are in the “work-computer-ratdat” project.</p>
+<div id="filter-yearly-counts-data-to-only-abundant-species" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="challenge-1-how-does-this-worklow-affects-you" class="callout-inner">
-<h3 class="callout-title">Challenge 1: How does this worklow affects
-you?</h3>
+<div id="filter-yearly-counts-data-to-only-abundant-species" class="callout-inner">
+<h3 class="callout-title">Filter Yearly Counts data to only Abundant Species</h3>
+<div class="callout-content">
+<p>Edit your code to create an abundant species table, where the average
+species count across years is greater than 50, and then filter your
+<code>yearly_counts</code> data to only those species before
+plotting.</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1">
+  Abundant Species Plot Code
+  </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div class="accordion-body">
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw">library</span><span class="op">(</span><span class="va">ratdat</span><span class="op">)</span></span>
+<span><span class="kw">library</span><span class="op">(</span><span class="va">tidyverse</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">yearly_counts</span> <span class="op">&lt;-</span> <span class="va">complete_old</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">count</span><span class="op">(</span><span class="va">year</span>, <span class="va">species_id</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># only plot species with an average count above 50</span></span>
+<span><span class="va">abund_species</span> <span class="op">&lt;-</span> <span class="va">yearly_counts</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">species_id</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">summarize</span><span class="op">(</span>avg_ct <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">n</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">filter</span><span class="op">(</span><span class="va">avg_ct</span> <span class="op">&gt;</span> <span class="fl">50</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">yearly_counts</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">filter</span><span class="op">(</span><span class="va">species_id</span> <span class="op">%in%</span> <span class="va">abund_species</span><span class="op">$</span><span class="va">species_id</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">n</span>,</span>
+<span>             color <span class="op">=</span> <span class="va">species_id</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu">geom_line</span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
+<span>    <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span></span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="discussion1" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge</h3>
+<div class="callout-content">
+<p>Stage and commit the changes we just made in the
+“work-computer-ratdat” project.</p>
+</div>
+</div>
+</div>
+<p>Note, since we haven’t push these changes to GitLab it still has the
+old version of our script. Push the changes to GitLab and see that those
+changes were synched.</p>
+<p>The next day, you are working from home and want to get the lastest
+version of your code to work on. Switch back to the “ratdat_lib_wksp”
+Project. Notice that the code in the script is still the old code. It
+does not automatically sync. Use the blue down arrow to
+<code>pull</code> down changes from GitLab before starting work for that
+day. Note, don’t click the dropbox arrow as that does a special type of
+pull that we don’t need for this workflow.</p>
+</div>
+</section><section><h2 class="section-heading" id="summary">Summary<a class="anchor" aria-label="anchor" href="#summary"></a>
+</h2>
+<hr class="half-width">
+<p>This git workflow allows you to keep repos synced between two
+computers. Best practice is to always push your changes when you are
+done working and to always pull the lastest version when you start.
+Sometimes things will fall out of sync because you forgot to push or
+pull. Those changes can be merged together in different ways and
+sometimes you have to resolve a conflict if you’ve changed the same line
+in two separate git histories. When you start using more complex git
+workflows or collaboration, this will also add some complexity.</p>
+<div id="how-does-this-worklow-affects-you" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div id="how-does-this-worklow-affects-you" class="callout-inner">
+<h3 class="callout-title">How does this worklow affects you?</h3>
 <div class="callout-content">
 <ul>
 <li>Does your usual workflow requires using two computers?</li>
@@ -925,24 +1027,12 @@ you?</h3>
 </div>
 </div>
 </div>
-<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1">
-  Output
-  </h4>
-</button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
-<div class="accordion-body">
-<p>Open the floor for discussions and/or questions from the
-learners.</p>
-</div>
-</div>
-</div>
-</div>
-</section><section><h2 class="section-heading" id="why-should-you-consider-using-gitlab-rather-than-github">Why should you consider using GitLab (rather than GitHub)<a class="anchor" aria-label="anchor" href="#why-should-you-consider-using-gitlab-rather-than-github"></a>
+</section><section><h2 class="section-heading" id="why-you-might-choose-to-use-gitlab-or-github-over-the-other">Why you might choose to use GitLab or GitHub (over the other)<a class="anchor" aria-label="anchor" href="#why-you-might-choose-to-use-gitlab-or-github-over-the-other"></a>
 </h2>
 <hr class="half-width">
+<div class="section level3">
+<h3 id="gitlab">GitLab<a class="anchor" aria-label="anchor" href="#gitlab"></a>
+</h3>
 <ul>
 <li>You might want to have your project associated with UW-Madison, for
 publication purposes, for example.<br>
@@ -952,14 +1042,24 @@ with resources. Being on campus IP space and using AD for authentication
 facilitates that process.</li>
 <li>GitLab code base is open source, which means you can modify and
 extend it to suit your needs. That is why UW-Madison GitLab instance is
-hosted and maintained on-prem.</li>
-<li>It is, however, fairly easy to move repos from GitLab to GitHub and
-vice versa. You start on one and later decide to move to other.</li>
+hosted and maintained at UW-Madison.</li>
 </ul>
+</div>
+<div class="section level3">
+<h3 id="github">GitHub<a class="anchor" aria-label="anchor" href="#github"></a>
+</h3>
+<ul>
+<li>If you have lots of off-campus collaborators or plan to make the
+project open source, GitHub may be a better option.</li>
+</ul>
+<p>It is, however, fairly easy to move repos from GitLab to GitHub and
+vice versa. You start on one and later decide to move to other.</p>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
- --></section></section>
+ -->
+</div>
+</section></section>
 </div>
     </main>
 </div>
