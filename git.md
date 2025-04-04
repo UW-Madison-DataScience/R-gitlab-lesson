@@ -174,7 +174,7 @@ Let's practice adding new files and tracking them with git.
 
 Create and Rscript with the following code and then track it with git using the steps we learned.
 
-```
+```r
 library(ratdat)
 library(tidyverse)
 
@@ -206,7 +206,7 @@ We can color the lines differently at the same time by adding `color = species_i
 Let's do so and then save that new version of the file to git.
 
 The code should now be
-```
+```r
 library(ratdat)
 library(tidyverse)
 
