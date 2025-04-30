@@ -3,10 +3,10 @@ title: Setup
 ---
 
 ## Install R and RStudio
-  * Use the following to find installation instructions under “Preparations”: [https://datacarpentry.github.io/R-ecology-lesson/index.html#preparations](https://datacarpentry.github.io/R-ecology-lesson/index.html#preparations)  
+
+  * Follow the [R Ecology Lesson instructions to install R and RStudio](https://datacarpentry.github.io/R-ecology-lesson/index.html#install-r-and-rstudio)  
       
-* Follow the instructions to install the "tidyverse" and "ratdat" packages:  
-  * In the RStudio Console enter: 
+* Install the "tidyverse" and "ratdat" packages. In the RStudio Console enter: 
   install.packages("tidyverse")
   install.packages("ratdat")
 
@@ -20,15 +20,17 @@ title: Setup
 
 ## Git installation 
 
-### **Windows**: install the Bash Shell with Git  
+### Windows
+
     * Download the Git for Windows [installer](https://gitforwindows.org/) and run it keeping all the defaults.  
     * **Additional step**    
-      * In RStudio, open the Terminal tab  
+      * In RStudio, open the Terminal tab  (under the console tab)
       * Copy and paste: setx HOME "%USERPROFILE%"  
       * Press Enter, you should see: "SUCCESS: Specified value was saved"  
-      * Restart your R session  
+      * Restart your RStudio session  
       
- ### **Mac**   
+ ### Mac
+
     * Open the Terminal app from Applications (it is sometimes under a folder called "Other" or "Utilities"), type `git --version` and press Enter/Return 
     * If it's not installed already, follow the instructions to Install the "command line developer tools"  
     * Do not click "Get Xcode" because that will take too long and is not necessary for this workshop   
