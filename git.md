@@ -65,9 +65,13 @@ We will call our project, `ratdat_lib_wksp`.
 Note, if you belong to any organizations (like from your dept or lab), you may need to change the project URL to your user instead of the organization.
 It will automatically assign the "Project slug" (aka the end of the url for that project) to be the same as the project name.
 If you use spaces in your project name, it will replace them with `-` in your project slug.
-You also need to choose the visiability level.  You can decide what level of visibility you would like your project to have.
-I'll make mine public so I can share it with you direclty if you are interested.
-You can also decide if you would like it to create a README for your project.  Best practice is to have a README for any project so we will keep it checked.
+You also need to choose the visiability level. You will want to think carefully about what visiability level makes sense for your projects in the future.
+Things to consider include if you want to share it with your lab/team members, others at UW, or make it public for anyone to see/use which can be helpful if you need it to be public for publication.
+Working in open source, you typically will make a project open unless there is a good reason to keep it private.
+You can change this setting later if you decide to do so.
+For this project, we will all make the repository **private**. For learning purposes, this will help us all be required to authenticate with GitLab at the same time.
+When a repo is public, it doesn't require you to authenticate when you put it on your computer from GitLab but it will require authentication when you want to sync changes you made on your computer to GitLab.
+You can decide if you would like it to create a README for your project when you set up future projects.  Best practice is to have a README for any project so we will keep it checked for this practice example.
 We will skip the option for security testing but this could be an option you want to enable for your code projects.
 Then click the "Create project" button.
 
