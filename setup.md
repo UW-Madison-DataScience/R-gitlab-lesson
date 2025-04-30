@@ -23,15 +23,15 @@ install.packages("ratdat")
 
 ### Windows
 
-    * Download the Git for Windows [installer](https://gitforwindows.org/) and run it keeping all the defaults.  
-    * **Additional step**    
-      * In RStudio, open the Terminal tab  (under the console tab)
-      * Copy and paste: setx HOME "%USERPROFILE%"  
-      * Press Enter, you should see: "SUCCESS: Specified value was saved"  
-      * Restart your RStudio session  
+* Download the Git for Windows [installer](https://gitforwindows.org/) and run it keeping all the defaults.  
+* **Additional step**    
+  * In RStudio, open the Terminal tab  (under the console tab)
+  * Copy and paste: setx HOME "%USERPROFILE%"  
+  * Press Enter, you should see: "SUCCESS: Specified value was saved"  
+  * Restart your RStudio session  
       
- ### Mac
+### Mac
 
-    * Open the Terminal app from Applications (it is sometimes under a folder called "Other" or "Utilities"), type `git --version` and press Enter/Return 
-    * If it's not installed already, follow the instructions to Install the "command line developer tools"  
-    * Do not click "Get Xcode" because that will take too long and is not necessary for this workshop   
+* Open the Terminal app from Applications (it is sometimes under a folder called "Other" or "Utilities"), type `git --version` and press Enter/Return 
+* If it's not installed already, follow the instructions to Install the "command line developer tools"  
+* Do not click "Get Xcode" because that will take too long and is not necessary for this workshop   
