@@ -5,16 +5,18 @@ title: Setup
 ## Install R and RStudio
 
   * Follow the [R Ecology Lesson instructions to install R and RStudio](https://datacarpentry.github.io/R-ecology-lesson/index.html#install-r-and-rstudio)  
-* Install the "tidyverse" and "ratdat" packages. In the RStudio Console enter: 
-  install.packages("tidyverse")
-  install.packages("ratdat")
+* Install the "tidyverse" and "ratdat" packages. In the RStudio Console enter:
 
-* If you see a question about “binary versions available…do you want to install from sources the package…” **SAY NO**  
-* Once a package has been installed, you don’t need to install it again until there is an update  
-* If you get an error message about needing RTools, you can find that here: [https://cran.r-project.org/bin/windows/Rtools/](https://cran.r-project.org/bin/windows/Rtools/)  
-  * Download and install the version that aligns with the R version that you currently have  
+```r
+install.packages("tidyverse")
+install.packages("ratdat")
+```
+
+* If you see a question about “binary versions available…do you want to install from sources the package…” **SAY NO**
+* Once a package has been installed, you don’t need to install it again until there is an update
+* If you get an error message about needing RTools, you can find that here: [https://cran.r-project.org/bin/windows/Rtools/](https://cran.r-project.org/bin/windows/Rtools/)
+  * Download and install the version that aligns with the R version that you currently have
   * Once installed, you might need to restart your R session
-    
 * DO NOT download the dataset
 
 ## Git installation 
