@@ -2,53 +2,36 @@
 title: Setup
 ---
 
-FIXME: Setup instructions live in this document. Please specify the tools and
-the data sets the Learner needs to have installed.
+## Install R and RStudio
 
-## Data Sets
+  * Follow the [R Ecology Lesson instructions to install R and RStudio](https://datacarpentry.github.io/R-ecology-lesson/index.html#install-r-and-rstudio)  
+* Install the "tidyverse" and "ratdat" packages. In the RStudio Console enter:
 
-<!--
-FIXME: place any data you want learners to use in `episodes/data` and then use
-       a relative link ( [data zip file](data/lesson-data.zip) ) to provide a
-       link to it, replacing the example.com link.
--->
-Download the [data zip file](https://example.com/FIXME) and unzip it to your Desktop
+```r
+install.packages("tidyverse")
+install.packages("ratdat")
+```
 
-## Software Setup
+* If you see a question about “binary versions available…do you want to install from sources the package…” **SAY NO**
+* Once a package has been installed, you don’t need to install it again until there is an update
+* If you get an error message about needing RTools, you can find that here: [https://cran.r-project.org/bin/windows/Rtools/](https://cran.r-project.org/bin/windows/Rtools/)
+  * Download and install the version that aligns with the R version that you currently have
+  * Once installed, you might need to restart your R session
+* DO NOT download the dataset
 
-::::::::::::::::::::::::::::::::::::::: discussion
-
-### Details
-
-Setup for different systems can be presented in dropdown menus via a `spoiler`
-tag. They will join to this discussion block, so you can give a general overview
-of the software used in this lesson here and fill out the individual operating
-systems (and potentially add more, e.g. online setup) in the solutions blocks.
-
-:::::::::::::::::::::::::::::::::::::::::::::::::::
-
-:::::::::::::::: spoiler
+## Git installation 
 
 ### Windows
 
-Use PuTTY
+    * Download the Git for Windows [installer](https://gitforwindows.org/) and run it keeping all the defaults.  
+    * **Additional step**    
+      * In RStudio, open the Terminal tab  (under the console tab)
+      * Copy and paste: setx HOME "%USERPROFILE%"  
+      * Press Enter, you should see: "SUCCESS: Specified value was saved"  
+      * Restart your RStudio session  
+      
+ ### Mac
 
-::::::::::::::::::::::::
-
-:::::::::::::::: spoiler
-
-### MacOS
-
-Use Terminal.app
-
-::::::::::::::::::::::::
-
-
-:::::::::::::::: spoiler
-
-### Linux
-
-Use Terminal
-
-::::::::::::::::::::::::
-
+    * Open the Terminal app from Applications (it is sometimes under a folder called "Other" or "Utilities"), type `git --version` and press Enter/Return 
+    * If it's not installed already, follow the instructions to Install the "command line developer tools"  
+    * Do not click "Get Xcode" because that will take too long and is not necessary for this workshop   
