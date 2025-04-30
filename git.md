@@ -51,6 +51,15 @@ usethis::git_sitrep()
 
 ## Setting up the GitLab Project
 
+::::::::::::::: instructor
+
+### Instructor Summary
+
+- Go to [UW-Madison GitLab instance][uw-gitlab] and login
+- Create new project called `ratdat_lib_wksp`, private repo with README, 
+
+::::::::::::::::::::::::::
+
 First you need to navigate to the [UW-Madison GitLab instance][uw-gitlab] and select the UW-Madison NetID login option.
 
 Next we will create a new project. You can do so by clicking the "+" button then "New project/repository" option in the upper-left hand of the screen OR you can click the blue "New Project" button on the right hand side of the screen. If you do not see the "+" button, it might mean that your sidebar is hidden. To see the sidebar, click the sidebar icon at the top left of your screen.
@@ -92,6 +101,26 @@ For example:
 ::::::::::::::::::::
 
 ## Setting up the Project in RStudio
+
+::::::::::::::: instructor
+
+### Instructor Summary
+
+- Create GitLab PAT
+    + Click settings in repo
+    + Project access token page
+    + Add new token - `work laptop` name or whatever you'd like, description blankdefault expiry, owner role, leave scoles unchecked
+    + Create project access token
+    + Copy project access token to text file
+- Setup project
+    + Return to main repo page
+    + clone using https
+    + Switch to RStudio
+    + New Rproject, version control with Git, paste URL, save on Desktop
+    + Authenticate with username and PAT (from text file)
+    + Show the project in R and describe the new files R added
+
+::::::::::::::::::::::::::
 
 Next we will `clone` (copy) this project to our computer and make it a project in RStudio.
 Before we can do so we need to set up verifying our identity with GitLab.
