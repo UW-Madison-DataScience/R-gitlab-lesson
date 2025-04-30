@@ -5,7 +5,6 @@ title: Setup
 ## Install R and RStudio
 
   * Follow the [R Ecology Lesson instructions to install R and RStudio](https://datacarpentry.github.io/R-ecology-lesson/index.html#install-r-and-rstudio)  
-      
 * Install the "tidyverse" and "ratdat" packages. In the RStudio Console enter: 
   install.packages("tidyverse")
   install.packages("ratdat")
