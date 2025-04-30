@@ -9,6 +9,6 @@
 "episodes/gitlab.Rmd" "60563a96c047b043732b171e3fb203f0" "site/built/gitlab.md" "2025-04-22"
 "instructors/instructor-notes.md" "cae72b6712578d74a49fea7513099f8c" "site/built/instructor-notes.md" "2025-04-22"
 "learners/reference.md" "1c7cc4e229304d9806a13f69ca1b8ba4" "site/built/reference.md" "2025-04-22"
-"learners/setup.md" "c614c93f45c4b3c0e870a20d2c45edc1" "site/built/setup.md" "2025-04-30"
+"learners/setup.md" "13a55a6e6bec638bbaf00220415c8d61" "site/built/setup.md" "2025-04-30"
 "profiles/learner-profiles.md" "60b93493cf1da06dfd63255d73854461" "site/built/learner-profiles.md" "2025-04-22"
 "renv/profiles/lesson-requirements/renv.lock" "96fdfec9ceb84585b0415532c19e98e6" "site/built/renv.lock" "2025-04-22"
