@@ -59,6 +59,7 @@ A version control system is a tool that allows you to take control of recording 
 - Collaborative writing with traditional word processors is cumbersome. Either every collaborator has to work on a document sequentially (slowing down the process of writing), or you have to send out a version to all collaborators and manually merge their comments into your document. The 'track changes' or 'record changes' option can highlight changes for you and simplifies merging, but as soon as you accept changes you will lose their history. You will then no longer know who suggested that change, why it was suggested, or when it was merged into the rest of the document. Even online word processors like Google Docs or Microsoft Office Online do not fully resolve these problems.   
 
 ::::::::::::::::::::::::: 
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Version Control Platforms
 
@@ -67,8 +68,6 @@ Today we will explore using the GitLab with RStudio, but how is GitLab different
 Git is an open-source tool that tracks your changes. GitHub and GitLab are hosts on the web that collect the complete history of those changes. GitHub offers free and paid plans, and as a member of UW-Madison, you have access to GitLab, which provides additional features such as licensing protections, authentication and identity management through your NetID, and support from DoIT Shared Tools. 
 
 Note that GitLab should not be used for storing large amounts of data (over 2GB). UW-Madison Research Data Services provides a [Data Storage Finder Tool](https://storage.researchdata.wisc.edu/?_gl=1*eqwfyq*_ga*MjY2MjYyMzkwLjE3NDAwNjY2OTE.*_ga_5YLVYCMY8S*MTc0MDE3NTMwNi4xLjEuMTc0MDE3NjM4Mi4wLjAuMA..) and consults on best practices for storing research data.
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
