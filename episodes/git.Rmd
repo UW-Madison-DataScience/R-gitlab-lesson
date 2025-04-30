@@ -67,6 +67,7 @@ It will automatically assign the "Project slug" (aka the end of the url for that
 If you use spaces in your project name, it will replace them with `-` in your project slug.
 You also need to choose the visiability level. You will want to think carefully about what visiability level makes sense for your projects in the future.
 Things to consider include if you want to share it with your lab/team members, others at UW, or make it public for anyone to see/use which can be helpful if you need it to be public for publication.
+Working in open source, you typically will make a project open unless there is a good reason to keep it private.
 You can change this setting later if you decide to do so.
 For this project, we will all make the repository **private**. For learning purposes, this will help us all be required to authenticate with GitLab at the same time.
 When a repo is public, it doesn't require you to authenticate when you put it on your computer from GitLab but it will require authentication when you want to sync changes you made on your computer to GitLab.
