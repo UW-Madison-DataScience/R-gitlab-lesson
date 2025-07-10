@@ -344,12 +344,50 @@ any links that you are not going to use.
 <hr class="half-width"></section><section id="git"><h2 class="section-heading"><a href="git.html">Using git in RStudio</a></h2>
 <hr class="half-width">
 <h3 id="git-headingInstructor1">
-<a href="git.html#headingInstructor1">Instructor Note</a><a class="anchor" aria-label="anchor" href="#git-headingInstructor1"></a>
+<a href="git.html#headingInstructor1">Instructor Summary</a><a class="anchor" aria-label="anchor" href="#git-headingInstructor1"></a>
+</h3>
+<ul>
+<li>Go to <a href="https://git.doit.wisc.edu/" class="external-link">UW-Madison GitLab
+instance</a> and login</li>
+<li>Create new project called <code>ratdat_lib_wksp</code>, private repo
+with README,</li>
+</ul>
+<hr>
+<br><h3 id="git-headingInstructor2">
+<a href="git.html#headingInstructor2">Instructor Note</a><a class="anchor" aria-label="anchor" href="#git-headingInstructor2"></a>
 </h3>
 <p>You may want to give a short orentation to the different parts of the
 GitLab project webpage that seem relevant here: For example: - the file
 list - issues/merge requests on the left pane - project info on the
 right side (license, changelog etc)</p>
+<hr>
+<br><h3 id="git-headingInstructor3">
+<a href="git.html#headingInstructor3">Instructor Summary</a><a class="anchor" aria-label="anchor" href="#git-headingInstructor3"></a>
+</h3>
+<ul>
+<li>Create GitLab PAT
+<ul>
+<li>Click settings in repo</li>
+<li>Project access token page</li>
+<li>Add new token - <code>work laptop</code> name or whatever you’d
+like, description blankdefault expiry, owner role, leave scoles
+unchecked</li>
+<li>Create project access token</li>
+<li>Copy project access token to text file</li>
+</ul>
+</li>
+<li>Setup project
+<ul>
+<li>Return to main repo page</li>
+<li>clone using https</li>
+<li>Switch to RStudio</li>
+<li>New Rproject, version control with Git, paste URL, save on
+Desktop</li>
+<li>Authenticate with username and PAT (from text file)</li>
+<li>Show the project in R and describe the new files R added</li>
+</ul>
+</li>
+</ul>
 <hr>
 <br></section><section id="gitlab"><h2 class="section-heading"><a href="gitlab.html">Syncing your project with GitLab</a></h2>
 <hr class="half-width"></section></section>
@@ -400,8 +438,8 @@ right side (license, changelog etc)</p>
   "url": "https://UW-Madison-DataScience.github.io/R-gitlab-lesson/instructor/instructor-notes.html",
   "identifier": "https://UW-Madison-DataScience.github.io/R-gitlab-lesson/instructor/instructor-notes.html",
   "dateCreated": "2024-12-09",
-  "dateModified": "2025-07-08",
-  "datePublished": "2025-07-08"
+  "dateModified": "2025-07-10",
+  "datePublished": "2025-07-10"
 }
 
   </script><script>

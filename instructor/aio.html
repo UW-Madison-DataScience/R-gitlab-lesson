@@ -334,7 +334,7 @@
         
 <section id="aio-intro"><p>Content from <a href="intro.html">Introduction to Version Control and GitLab</a></p>
 <hr>
-<p>Last updated on 2025-07-01 |
+<p>Last updated on 2025-07-10 |
 
         <a href="https://github.com/UW-Madison-DataScience/R-gitlab-lesson/edit/main/episodes/intro.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 12 minutes</p>
@@ -429,7 +429,7 @@ changes?</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <ul>
 <li><p>Recovering the excellent version is only possible if you created
@@ -491,7 +491,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-git"><p>Content from <a href="git.html">Using git in RStudio</a></p>
 <hr>
-<p>Last updated on 2025-07-01 |
+<p>Last updated on 2025-07-10 |
 
         <a href="https://github.com/UW-Madison-DataScience/R-gitlab-lesson/edit/main/episodes/git.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 12 minutes</p>
@@ -569,6 +569,23 @@ typing:</p>
 </section><section><h2 class="section-heading" id="setting-up-the-gitlab-project">Setting up the GitLab Project<a class="anchor" aria-label="anchor" href="#setting-up-the-gitlab-project"></a>
 </h2>
 <hr class="half-width">
+<div id="accordionInstructor1" class="accordion instructor-note accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
+  <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Summary </h3>
+</button>
+<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
+<div class="accordion-body">
+<ul>
+<li>Go to <a href="https://git.doit.wisc.edu/" class="external-link">UW-Madison GitLab
+instance</a> and login</li>
+<li>Create new project called <code>ratdat_lib_wksp</code>, private repo
+with README,</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 <p>First you need to navigate to the <a href="https://git.doit.wisc.edu/" class="external-link">UW-Madison GitLab instance</a> and
 select the UW-Madison NetID login option.</p>
 <p>Next we will create a new project. You can do so by clicking the “+”
@@ -609,12 +626,12 @@ an option you want to enable for your code projects. Then click the
 <p>Now that we have created the project we can see the repository. It
 created a nice README template at the bottom.</p>
 <!--- screenshot needed: view of the project repo after creation -->
-<div id="accordionInstructor1" class="accordion instructor-note accordion-flush">
+<div id="accordionInstructor2" class="accordion instructor-note accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
-  <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
+<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor2" aria-expanded="false" aria-controls="collapseInstructor2">
+  <h3 class="accordion-header" id="headingInstructor2">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
+<div id="collapseInstructor2" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor2" aria-labelledby="headingInstructor2">
 <div class="accordion-body">
 <p>You may want to give a short orentation to the different parts of the
 GitLab project webpage that seem relevant here: For example: - the file
@@ -627,6 +644,41 @@ right side (license, changelog etc)</p>
 </section><section><h2 class="section-heading" id="setting-up-the-project-in-rstudio">Setting up the Project in RStudio<a class="anchor" aria-label="anchor" href="#setting-up-the-project-in-rstudio"></a>
 </h2>
 <hr class="half-width">
+<div id="accordionInstructor3" class="accordion instructor-note accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor3" aria-expanded="false" aria-controls="collapseInstructor3">
+  <h3 class="accordion-header" id="headingInstructor3">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Summary </h3>
+</button>
+<div id="collapseInstructor3" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor3" aria-labelledby="headingInstructor3">
+<div class="accordion-body">
+<ul>
+<li>Create GitLab PAT
+<ul>
+<li>Click settings in repo</li>
+<li>Project access token page</li>
+<li>Add new token - <code>work laptop</code> name or whatever you’d
+like, description blankdefault expiry, owner role, leave scoles
+unchecked</li>
+<li>Create project access token</li>
+<li>Copy project access token to text file</li>
+</ul>
+</li>
+<li>Setup project
+<ul>
+<li>Return to main repo page</li>
+<li>clone using https</li>
+<li>Switch to RStudio</li>
+<li>New Rproject, version control with Git, paste URL, save on
+Desktop</li>
+<li>Authenticate with username and PAT (from text file)</li>
+<li>Show the project in R and describe the new files R added</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 <p>Next we will <code>clone</code> (copy) this project to our computer
 and make it a project in RStudio. Before we can do so we need to set up
 verifying our identity with GitLab.</p>
@@ -762,7 +814,7 @@ using the steps we learned.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>Copy the code above</li>
@@ -849,7 +901,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-gitlab"><p>Content from <a href="gitlab.html">Syncing your project with GitLab</a></p>
 <hr>
-<p>Last updated on 2025-07-01 |
+<p>Last updated on 2025-07-10 |
 
         <a href="https://github.com/UW-Madison-DataScience/R-gitlab-lesson/edit/main/episodes/gitlab.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 12 minutes</p>
@@ -1115,8 +1167,8 @@ any links that you are not going to use.
   "url": "https://UW-Madison-DataScience.github.io/R-gitlab-lesson/instructor/aio.html",
   "identifier": "https://UW-Madison-DataScience.github.io/R-gitlab-lesson/instructor/aio.html",
   "dateCreated": "2024-12-09",
-  "dateModified": "2025-07-08",
-  "datePublished": "2025-07-08"
+  "dateModified": "2025-07-10",
+  "datePublished": "2025-07-10"
 }
 
   </script><script>
