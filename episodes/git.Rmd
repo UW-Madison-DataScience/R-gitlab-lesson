@@ -149,7 +149,7 @@ Now that we have set up the authentication, we can create the Project on our com
 In GitLab, return to your new project directory `ratdat_lib_wksp` by clicking the link at the top of the page. Then click the blue "Code" button at the top of the directory information.
 Then click the copy button to the right of the "Clone with HTTPS" option.
 
-<!--- screenshot needed: the code menu and the copy button from the clone with HTTPS option highlighted"
+<!--- screenshot needed: the code menu and the copy button from the clone with HTTPS option highlighted" -->
 
 Switch back to RStudio and create a new project with the +shield icon or `File` > `New Project`.
 
