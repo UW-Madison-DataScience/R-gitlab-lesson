@@ -109,7 +109,7 @@ For example:
 - Create GitLab PAT
     + Click settings in repo
     + Project access token page
-    + Add new token - `work laptop` name or whatever you'd like, description blankdefault expiry, owner role, leave scoles unchecked
+    + Add new token - `work laptop` name or whatever you'd like, description blankdefault expiry, owner role, leave scopes unchecked
     + Create project access token
     + Copy project access token to text file
 - Setup project
